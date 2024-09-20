@@ -6,9 +6,6 @@
 # IMPORTS
 # Libraries for data processing
 import pandas as pd
-import numpy as np
-
-# Libraries for MySQL connection
 import mysql.connector
 from mysql.connector import errorcode
 
@@ -45,6 +42,9 @@ try:
     # Cargar datos desde el archivo CSV
     df = pd.read_csv('Files/HR RAW DATA CLEAN.csv')
 
+    # Filtrar filas donde `EmployeeNumber` no es 'Unknown'
+    df_filtered = df[df["EmployeeNumber"] != 'Unknown']
+
     # Configuración de la conexión
     cnx = create_connection()
     if cnx is None:
@@ -59,15 +59,15 @@ try:
         VALUES (%s, %s, %s, %s, %s, %s, %s)
     """
 
-    # Preparar los datos para la inserción
+    # Preparar los datos para la inserción sin preocuparse por valores nulos
     data_table_personaldetails = list(zip(
-        df["EmployeeNumber"].values,
-        df["Age"].values,
-        df["Education"].values,
-        df["EducationField"].values,
-        df["Gender"].values,
-        df["MaritalStatus"].values,
-        df["DateBirth"].values
+        df_filtered["EmployeeNumber"].values,
+        df_filtered["Age"].values,
+        df_filtered["Education"].values,
+        df_filtered["EducationField"].values,
+        df_filtered["Gender"].values,
+        df_filtered["MaritalStatus"].values,
+        df_filtered["DateBirth"].values
     ))
 
     # Convertir columnas que deban ser enteros
@@ -78,7 +78,7 @@ try:
             for elemento in tupla:
                 try:
                     lista_intermedia.append(int(elemento))
-                except:
+                except ValueError:
                     lista_intermedia.append(elemento)
             data_table_def.append(tuple(lista_intermedia))
         return data_table_def
@@ -106,6 +106,5 @@ finally:
     if cnx and cnx.is_connected():
         cnx.close()
 
-  
 
 # %%
