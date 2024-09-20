@@ -75,9 +75,9 @@ If you do not have these libraries, you can install them using *pip install*
 
 #### Importing libraries and loading data:
 
-*Use of pandas to load CSV files into DataFrames.*
+*Importing and use of pandas to load CSV files into DataFrames.*
 <p align="center">
-  <img src="imagenes/Importaciones.PNG" alt="project-image">
+  <img src="Files/Image/1.PNG" alt="project-image">
 </p>
 
 
