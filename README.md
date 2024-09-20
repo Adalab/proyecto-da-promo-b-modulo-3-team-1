@@ -1,6 +1,7 @@
-# *README DATA ANALYST PROJECT*
-*Team 1: The Mammas*
-## Work on a dataset of ABC Corporation employees. ##
+<h1 align="center" id="title"># *Team 1: The Mammas*</h1>  
+
+## *README DATA ANALYST PROJECT*
+### Work on a dataset of ABC Corporation employees. ##
 
 <h1 align="center" id="title">Data Analysis Proyect</h1>
 
