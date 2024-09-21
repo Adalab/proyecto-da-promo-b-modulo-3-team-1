@@ -109,7 +109,7 @@ Data extraction, transformation and loading (ETL): -automation of the data inser
 
 ## Author
 
-Made with 💜 by [Belén V N (https://github.com/BelenVN), Gloria L C (https://github.com/GloriaLopezChinarro), Viviana V R (https://github.com/Viviana1988) y Cristina R H ]
+Made with 💜 by [Belén V N (https://github.com/BelenVN), Gloria L C (https://github.com/GloriaLopezChinarro), Viviana V R (https://github.com/Viviana1988) y Cristina R H (https://github.com/cristinarull14)]
 
 
 # ENJOY IT 🤩
